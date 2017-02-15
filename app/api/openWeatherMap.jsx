@@ -15,11 +15,10 @@ module.exports = {
 				throw new Error(res.data.message);
 			} else {
 				if (res.data.name.toLowerCase() !== location.toLowerCase()) {
-					alert('Country not found ' + res.data.name );
-					return 'unknown';
+					return `Country not found, suggestions: ${res.data.name}`;
 				}
-				
-				return res.data.main.temp;
+
+				return Number(res.data.main.temp);
 			}
 		}, function (err) {
 			throw new Error(err.response.data.message);

@@ -21,7 +21,7 @@ var Weather = React.createClass({
 
 		openWeatherMap.getTemp(location).then((temp) => {
 
-			if (temp !== 'unknown') {
+			if (typeof temp !== 'string') {
 				this.setState({
 					location: location,
 					temp: temp,
@@ -38,7 +38,6 @@ var Weather = React.createClass({
 				isLoading: false,
 				errorMessage: err.message
 			});
-			alert(err);
 		});
 	},
 	render: function () {
