@@ -3,8 +3,10 @@ var React = require('react');
 var About = (props) => {
 	return (
 		<div>
-			<h3>About</h3>
-			<p>Welcome to the about page</p>
+			<h1 className="text-center">About</h1>
+			<p>A simple web app built with React for learning purpose only.</p>
+			<p><em>Thank you for visiting.</em></p>
+			<div className="text-center"><img src="images/sunSym.png" /></div>
 		</div>
 	);
 };
