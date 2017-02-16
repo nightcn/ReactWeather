@@ -6,11 +6,13 @@ var openWeatherMap = require('openWeatherMap');
 
 
 var Weather = React.createClass({
+
 	getInitialState: function () {
 		return {
 			isLoading: false
 		};
 	},
+
 	handleSearch: function (location) {
 		//var that = this;
 
@@ -27,12 +29,14 @@ var Weather = React.createClass({
 					temp: temp,
 					isLoading: false
 				});
+
 			} else {
 				this.setState({
 					isLoading: false,
 					errorMessage: temp
 				});
 			}
+			
 		}, (err) => {
 			this.setState({
 				isLoading: false,
@@ -59,7 +63,7 @@ var Weather = React.createClass({
 
 		return (
 			<div>
-				<h1 className="text-center">Get Weather</h1>
+				<h1 className="text-center page-title">Get Weather</h1>
 				<WeatherForm onSearch={this.handleSearch} />
 				{renderMessage()}
 				{renderError()}
